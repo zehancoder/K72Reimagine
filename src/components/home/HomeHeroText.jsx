@@ -4,7 +4,7 @@ import Video from "./Video";
 function HomeHeroText() {
   return (
     <div>
-      <div className="md:text-7xl lg:leading-[150px] small:text-5xl text-5xl lg:text-[150px] text-white pt-2 text-center font-[font1] uppercase">
+      <div className="md:text-7xl md:mt-0 mt-16 lg:leading-[150px] small:text-5xl text-5xl lg:text-[150px] text-white pt-2 text-center font-[font1] uppercase">
         <h1 className="">L'étincelle</h1>
         <div className="flex justify-center items-center ">
           qui

@@ -7,20 +7,20 @@ import React, { useRef } from "react";
 function Agence() {
   gsap.registerPlugin(ScrollTrigger);
   const imageArray = [
-    "https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Olivier_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Lawrence_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/HugoJoseph_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/CAMILLE_480X640_2-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg",
+    "/scrollChangeImages/img1.jpg",
+    "/scrollChangeImages/img2.jpg",
+    "/scrollChangeImages/img3.jpg",
+    "/scrollChangeImages/img4.jpg",
+    "/scrollChangeImages/img5.jpg",
+    "/scrollChangeImages/img6.jpg",
+    "/scrollChangeImages/img7.jpg",
+    "/scrollChangeImages/img8.jpg",
+    "/scrollChangeImages/img9.jpg",
+    "/scrollChangeImages/img10.jpg",
+    "/scrollChangeImages/img11.jpg",
+    "/scrollChangeImages/img12.jpg",
+    "/scrollChangeImages/img13.jpg",
+    "/scrollChangeImages/img14.jpg",
   ];
   const imageDivRef = useRef();
   const imageRef = useRef(null);
@@ -29,10 +29,15 @@ function Agence() {
       scrollTrigger: {
         trigger: imageDivRef.current,
         markers: true,
-        start: "top 28.3%",
+        start: "top 0",
         end: "top -100%",
-        scrub: true,
         pin: true,
+        pinSpacing: true,
+        pinReparent: true,
+        pinType: "transform",
+        scrub: 1,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
         onUpdate: (elem) => {
           let imageIndex;
           if (elem.progress < 1) {
@@ -48,8 +53,8 @@ function Agence() {
   });
 
   return (
-    <div>
-      <div className="section1">
+    <div className="parent">
+      <div className="section1 py-1 relative">
         <div
           ref={imageDivRef}
           className="md:w-[20vw] small:w-[25vw] w-[30vw] overflow-hidden lg:w-[17vw] xl:w-[15vw] rounded-lg md:rounded-xl lg:rounded-3xl  absolute xl:top-[280px] lg:top-[380px] md:top-[400px] small:top-[220px] top-[230px] left-[30vw]"

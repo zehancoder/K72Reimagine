@@ -24,3 +24,26 @@ body{
 .allPageBigText{
   @apply text-[19.5vw] leading-[17vw] font-[font2] font-normal uppercase
 }
+
+/* menu bar custom hover edit */
+.menuBar {
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.menuBar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 0%;
+  width: 100%;
+  background-color: #D3FD50;
+  transition: 0.3s;
+
+  z-index: -1;
+}
+.menuBar:hover::before {
+  height: 100%;
+}
