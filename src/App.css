@@ -1,10 +1,9 @@
 @import "tailwindcss";
-html{
+html {
   scroll-behavior: smooth;
 }
-body{
+body {
   background-color: #111;
- 
 }
 @font-face {
   font-family: font1;
@@ -14,15 +13,14 @@ body{
   font-family: font2;
   src: url(../public/fonts/Lausanne-500.woff2);
 }
-@theme{
-    --breakpoint-small: 30rem;
-    
+@theme {
+  --breakpoint-small: 30rem;
 }
-.bottomText{
-  @apply hover:text-[#D3FD50] hover:border-[#D3FD50] transition border-3 px-3 leading-5 small:leading-7  md:leading-8  border-white small:pt-3 pt-2 md:pt-4   rounded-full
+.bottomText {
+  @apply hover:text-[#D3FD50] hover:border-[#D3FD50] transition border-3 px-3 leading-5 small:leading-7  md:leading-8  border-white small:pt-3 pt-2 md:pt-4   rounded-full;
 }
-.allPageBigText{
-  @apply text-[19.5vw] leading-[17vw] font-[font2] font-normal uppercase
+.allPageBigText {
+  @apply text-[19.5vw] leading-[17vw] font-[font2] font-normal uppercase;
 }
 
 /* menu bar custom hover edit */
@@ -39,11 +37,63 @@ body{
   top: 0;
   height: 0%;
   width: 100%;
-  background-color: #D3FD50;
+  background-color: #d3fd50;
   transition: 0.3s;
 
   z-index: -1;
 }
 .menuBar:hover::before {
   height: 100%;
+}
+
+/* make navber animation */
+/* 
+.customBorderTop{
+  border-top: 0.5px solid white;
+}
+.customBorderBottom{
+  border-bottom: 0.3px solid rgba(255, 255, 255, 0.483);
+} */
+
+.moveX {
+  animation: navHoverAnime 5s linear infinite ;
+  
+}
+.textTransfrom {
+  transform: translateY(-120%);
+   
+}
+.hoverEffect {
+  overflow: hidden;
+}
+.hoverEffect:hover .textTransfrom {
+  transform: translateY(0);
+}
+.translateItem {
+  transform: translateY(-120%);
+  overflow: visible;
+  transition: 0.4s;
+}
+
+.hoverEffect:hover .translateItem {
+  transform: translateY(0%);
+}
+
+@keyframes navHoverAnime {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+.closeMenu:hover .menuLine{
+  transition: .8s;
+  background-color: #d3fd50;
+}
+
+.menuBar:hover .changeColor {
+  background-color: black;
 }

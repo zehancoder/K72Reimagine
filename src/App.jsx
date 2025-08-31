@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Navber/>
-      <FullScreenNav/>
+      {/* <FullScreenNav/> */}
       <Routes>
         <Route path='/' element = {<Home/>}/>
         <Route path='/projects' element = {<Project/>}/>
