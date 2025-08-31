@@ -6,12 +6,15 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 function FullScreenNav({ navOpen, setNavOpen }) {
+
+  
+
   useGSAP(() => {
     gsap.from(".stairs2", {
       height: 0,
     });
     gsap.to(".closeBar", {
-      x: 140,
+      x: "100%",
       duration: 0.1,
     });
   }, []);
@@ -20,7 +23,7 @@ function FullScreenNav({ navOpen, setNavOpen }) {
     const tl = gsap.timeline();
     // close menu bar
     tl.to(".closeBar", {
-      x: 140,
+      x: "100%",
       delay: 0,
     });
     // single nav linkses
@@ -53,6 +56,9 @@ function FullScreenNav({ navOpen, setNavOpen }) {
     tl.to(".stairsParent", {
       display: "none",
     });
+    tl.to("body", {
+      overflowY: "visible"
+    })
   };
 
   return (
@@ -63,9 +69,9 @@ function FullScreenNav({ navOpen, setNavOpen }) {
         `}
         onClick={handleClose}
       >
-        <div className="relative h-28 w-28 overflow-hidden ">
-          <div className="h-44 w-0.5 bg-white -rotate-45 origin-top menuLine"></div>
-          <div className="h-44 w-0.5 bg-white top-0 right-0 absolute menuLine rotate-45 origin-top"></div>
+        <div className="relative md:h-28 md:w-28 h-14 w-14 overflow-hidden ">
+          <div className="h-20 md:h-44 w-0.5 bg-white -rotate-45 origin-top menuLine"></div>
+          <div className="h-20 md:h-44 w-0.5 bg-white top-0 right-0 absolute menuLine rotate-45 origin-top"></div>
         </div>
       </div>
       {/* animation */}
@@ -82,7 +88,7 @@ function FullScreenNav({ navOpen, setNavOpen }) {
 
       <div
         id="fullscrennav"
-        className="absolute hidden navLinks z-30 text-white top-0 h-screen w-screen "
+        className="absolute hidden navLinks z-30 text-white top-0 h-screen w-screen md:mt-0 mt-16"
       >
         <div className="-z-30">
           <div className="allLinks">

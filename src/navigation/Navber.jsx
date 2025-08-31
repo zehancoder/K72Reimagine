@@ -21,7 +21,7 @@ function Navber() {
     });
     // menu close bar
     gsap.to(".closeBar", {
-      x: 140,
+      x: "100%",
       duration: 0.1
     })
   }, []);
@@ -62,6 +62,9 @@ function Navber() {
       duration: 0.1,
       delay: 0
     })
+    tl.to("body", {
+      overflowY: "hidden"
+    })
   };
 
   return (
@@ -70,7 +73,7 @@ function Navber() {
         <Link to={"/"} className="p-3 cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-28"
+            className="w-20 md:w-28"
             viewBox="0 0 103 44"
           >
             <path
@@ -81,12 +84,12 @@ function Navber() {
           </svg>
         </Link>
         <div
-          className={`h-10 md:h-11 w-60 md:w-72 bg-black mb-7 md:mb-7 menuBar flex items-center justify-center cursor-pointer menuBar`}
+          className={`h-10 md:h-11 w-40 md:w-72 bg-black mb-7 md:mb-7 menuBar flex items-center justify-center cursor-pointer menuBar`}
           onClick={handleOpen}
         >
           <div>
-            <div className="w-16 bg-white changeColor h-0.5"></div>
-            <div className="w-14 mt-2 ml-5 changeColor bg-white h-0.5 "></div>
+            <div className="md:w-16 w-12 bg-white changeColor h-0.5"></div>
+            <div className="md:w-14 w-10 mt-2 ml-5 changeColor bg-white h-0.5 "></div>
           </div>
         </div>
       </div>
